@@ -35,7 +35,7 @@ class Plants(Resource):
         db.session.add(new_record)
         db.session.commit()
 
-        response_dict = new_record
+        response_dict = new_record.to_dict()
         response = make_response(jsonify(response_dict), 201)
 
         return response
